@@ -1,6 +1,7 @@
 using ISRPO2.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace ISRPO2.Controllers
 {
@@ -43,16 +44,31 @@ namespace ISRPO2.Controllers
 		[HttpPost]
 		public IActionResult TaskFirst(string firstNum, string secondNum, string thirdNum)
 		{
-			int result;
-			if (Convert.ToInt32(firstNum) > 0 && Convert.ToInt32(secondNum) > 0 && Convert.ToInt32(thirdNum) > 0 && firstNum == null && secondNum == null && thirdNum == null)
+			int result = 0;
+			if (Convert.ToInt32(firstNum) > 0 && Convert.ToInt32(secondNum) > 0 && Convert.ToInt32(thirdNum) > 0 && firstNum != null && secondNum != null && thirdNum != null)
 			{
 				result = (Convert.ToInt32(firstNum) + Convert.ToInt32(secondNum) + Convert.ToInt32(thirdNum)) / 3;
 			}
-			else
+			else if (firstNum != null && secondNum != null && thirdNum != null)
 			{
 				result = Convert.ToInt32(firstNum) * Convert.ToInt32(secondNum) * Convert.ToInt32(thirdNum);
 			}
 			ViewBag.H = Convert.ToInt32(result);
+			return View();
+		}
+		[HttpPost]
+		public IActionResult TaskSecond (string forCheck)
+		{
+			string result;
+			if (Convert.ToInt32(forCheck) != null && Convert.ToInt32(forCheck) >= 100 && Convert.ToInt32(forCheck) <= 999)
+			{
+				result = "Число трёхзначное";
+			}
+			else
+			{
+				result = "Число не трёхзначное или отрицательное";
+			}
+			ViewBag.H = result;
 			return View();
 		}
     }

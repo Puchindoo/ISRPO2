@@ -1,5 +1,13 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-}
+﻿<form method="post">
+	<p style="background-color: #3045FF; border-radius: 6px; color: white; padding: 14px">
+		Дано целое положительное число. Проверить истинность
+		высказывания: «Данное число является нечетным трехзначным».
+	</p>
+	<input placeloder="Введите число" type="number" style="border-radius: 6px; padding: 4px;" name="forCheck"/>
+	<br />
+	<br />
+	<button style="background-color:#3045FF; border-radius: 6px; color: white; padding: 6px;">Проверить</button>
+	<br />
+	<br />
+	<h4>@ViewBag.H</h4>
+</form>

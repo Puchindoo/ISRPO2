@@ -1,16 +1,22 @@
 ﻿<form method="post">
-	<input placeholder="Введите первое число" name="firstNum" type="number" style="width: 200px;" />
+	<p style="background-color: #3045FF; border-radius: 6px; color: white; padding:14px">
+		Даны три действительные числа. Если все числа положительны, найти
+		среднее арифметическое, иначе произведение.
+	</p>
 	<br />
 	<br />
-	<input placeholder="Введите второе число" name="secondNum" type="number" style="width: 200px;" />
+	<input placeholder="Введите первое число" name="firstNum" type="number" style="border-radius: 6px; padding: 4px;" />
 	<br />
 	<br />
-	<input placeholder="Введите третье число" name="thirdNum" type="number" style="width: 200px;" />
+	<input placeholder="Введите второе число" name="secondNum" type="number" style="border-radius: 6px; padding: 4px;" />
 	<br />
 	<br />
-	<button style="background-color:#3045FF; border-radius: 6px;">Проверить</button>
+	<input placeholder="Введите третье число" name="thirdNum" type="number" style="border-radius: 6px; padding: 4px;" />
+	<br />
+	<br />
+	<button style="background-color:#3045FF; border-radius: 6px; color: white; padding: 6PX">Проверить</button>
 	<br />
 	<br />
 	<p>Если все числа 3 числа будут пложительными программа найдёт среднее арифметическое иначе произведение</p>
-	<p>Результат: @ViewBag.H</p>
+	<h4>Результат: @ViewBag.H</h4>
 </form>
